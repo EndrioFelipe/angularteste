@@ -1,16 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-
-import { PhotoComponent } from './photo/photo.component';
+import { PhotosModule } from './photos/photos.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PhotoComponent
+    AppComponent
   ],
-  imports: [
-    BrowserModule
+  imports: [ //aqui é onde vão ficar os outros módulos que carregam componentes relacionados
+    BrowserModule, //esse móduloe BrowserModule é carregado pelo Angular CLI
+    PhotosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

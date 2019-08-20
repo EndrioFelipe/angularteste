@@ -1,1 +1,10 @@
-<ap-photo></ap-photo>
+<!-- <ap-photo url="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Sultan_the_Barbary_Lion.jpg/440px-Sultan_the_Barbary_Lion.jpg" description="Leão"></ap-photo> -->
+<!-- acima é passando o valor direto para a propriedade não necessitando do dataBiding que são esse '[]' em url e description -->
+
+<!-- Abiaixo é preciso fazer o dataBiding, pq se não o angular vai achar q vc tá passando uma string como 'phto.url' não o valor q ela carrega q vem de app.component.ts-->
+<ap-photo 
+    *ngFor = "let photo of photos "  
+    [url]="photo.url" 
+    [description] ="photo.description"> 
+</ap-photo>
+<!-- ngFor é uma diretiva que funciona como o for melhorado -->
