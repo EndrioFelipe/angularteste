@@ -1,6 +1,7 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Photo } from "./photo";
+
+import { Injectable } from '@angular/core';
+import { Photo } from './photo';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })  //app.component não vai conseguir receber o fornecedor de HttpClient sem esse Injectable, isso vai tornar essa classe injetável lá no app.component. Esse { providedIn: 'root' } é o escopo de funcionamento dessa classe PhotoService, pois ao passar 'root' vc diz que qualquer outro componente poderá injetar essa classe.
 export class PhotoService {
