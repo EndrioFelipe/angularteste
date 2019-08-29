@@ -1,0 +1,12 @@
+<ol class="list-unstyled">
+  <li *ngFor="let cols of rows" class="row"><!-- esse photos é o array q vem de photos.component.ts / cada lista será uma row com cada uma 3 fotos, por isso vamos iterar de rows, cada row com 3 colunas / lembrando q rows é um array que contém conjuntos de arrays com cada um deles com 3 photos-->
+    <div *ngFor="let photo of cols" class="col-4"> <!-- agora cada photo vai preencher uma coluna e 3 colunas preencherão uma row-->
+      <ap-photo
+          [url]="photo.url"
+          [description]="photo.description">
+      </ap-photo>
+    </div> 
+  </li>
+</ol>
+
+

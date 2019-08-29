@@ -1,5 +1,12 @@
-<ap-photo 
-    *ngFor = "let photo of photos "  
-    [url]="photo.url" 
-    [description] ="photo.description"> 
-</ap-photo> 
+<!-- esse trecho de código foi para photos.component.html -->
+<!-- <ol class="list-unstyled row">
+    <li *ngFor="let photo of photos" class="col-4">
+        <ap-photo
+            [url]="photo.url"
+            [description]="photo.description">
+        </ap-photo>
+    </li>
+</ol> -->
+
+<!-- Aqui em baixo ele pega o seletor que vem de photos.component -->
+<ap-photos [photos]="photos"></ap-photos>  <!-- [photos] é de photos.component e "photos" é o array q vem de photo.list.component.ts-->

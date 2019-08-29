@@ -6,7 +6,7 @@ import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 
 const routes: Routes = [ //importar esse Routes faz com q os objetos javascript sejam colocados da forma correta e acuse erros caos vc escreva o nome do objeto errado, como 'componet' ao invés de 'component'
-    {path: 'user/:userName', component: PhotoListComponent},
+    {path: 'user/:userName', component: PhotoListComponent}, //esse coringa ':userName' faz com que qualquer coisa que esteja depois de /user como /user/xxx seja uma rota válida. Este coringa está sendo usado em photo-list.component na const userName.
     {path: 'p/add', component: PhotoFormComponent},
     {path: '**', component: NotFoundComponent}
 ] //esse é um array javascript/ dentro dele vou colocar objetos javascript que vai designar uma rota para cada componente
