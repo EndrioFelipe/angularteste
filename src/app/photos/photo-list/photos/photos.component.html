@@ -1,6 +1,18 @@
+<!-- esse trecho de código estava em photo-list.component.html, lá o array de photos de photo-list.component.ts
+disponibilizava a 'url' e a 'description' para photo.component.ts através do seletor 'ap-photo',
+agora essa mesma ligação é feita através do binding <ap-photos [photos]="photos"></ap-photos> q liga 
+'photos' de photo-list e 'photos' photos.component.ts 
+
+**os campos url e description vêm da própria api
+
+-->
+
+
 <ol class="list-unstyled">
-  <li *ngFor="let cols of rows" class="row"><!-- esse photos é o array q vem de photos.component.ts / cada lista será uma row com cada uma 3 fotos, por isso vamos iterar de rows, cada row com 3 colunas / lembrando q rows é um array que contém conjuntos de arrays com cada um deles com 3 photos-->
+  <li *ngFor="let cols of rows" class="row"><!-- esse rows é o array q vem de photos.component.ts / cada lista será uma row com cada uma 3 fotos, por isso vamos iterar de rows, cada row com 3 colunas / lembrando q rows é um array que contém conjuntos de arrays com cada um deles com 3 photos-->
     <div *ngFor="let photo of cols" class="col-4"> <!-- agora cada photo vai preencher uma coluna e 3 colunas preencherão uma row-->
+      <!-- aqui chama o photo.component.html q possui esses campos, vamos sobrescrever esses campos
+      'url' e 'description' com 'photo.url' e 'photo.description' -->
       <ap-photo
           [url]="photo.url"
           [description]="photo.description">

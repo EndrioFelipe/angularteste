@@ -11,7 +11,7 @@ import { Photo } from '../photo/photo';
 export class PhotoListComponent implements OnInit {
 
   photos: Photo[] = [ //isso aqui é um array. Foi criado para não encher demais o app.component com um monte de seletores 
-    //é daqui que parte as informações que vão para a url e description que o photo.component estão requisitando
+    //é daqui que parte as informações que vão para a url e description que o photo.component está requisitando
   ];
   constructor(
     private photoService: PhotoService,
