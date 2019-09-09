@@ -8,5 +8,41 @@
     </li>
 </ol> -->
 
+<!-- campo de procura de photos.
+/ Keyup é o mesmo evento do javascript OnKeyup
+/ no javaScript puro o onKeyup usa uma variável event para acessar o valor digitado no campo assim:
+    h1.addEventListener('Keyup', function (event) {
+        event.target.value;  >  aqui pegamos o valor digitado pelo usuário
+    });
+    no Angular temos o '$event' que faz a mesma coisa, passando seu valor para a variável filter de photo-list.component.ts
+
+/ o evento keyup está entre parênteses para que ele avalie a expressão 'filter = $event.target.value'
+q serve pra passar o input do usuário para a variável filter 
+e não simplesmente pegue este conteúdo e o interprete literalmente como uma string. Esse esquema de 
+colocar prênteses no nome do evento é chamado de event binding. 
+
+/Diferença entre [] e ():
+
+[] => sempre os dados flluem do componente para o template;
+() => assim q o evento é disparado, os dados fluem da view para o componente, o contrário dos [].
+-->
+<div class="text-center mt-3 mb-3">
+    <form>
+        <input
+            class="rounded"
+            type="search"
+            placeholder="search..."
+            autofocus
+            (keyup) = "filter = $event.target.value"
+            >
+    </form>
+</div>
+<!-- expression language para acessar o valor da variável na view -->
+{{filter | uppercase}}
+
 <!-- Aqui em baixo ele pega o seletor que vem de photos.component -->
-<ap-photos [photos]="photos"></ap-photos>  <!-- [photos] é de photos.component e "photos" é o array q vem de photo.list.component.ts-->
+<ap-photos [photos]="photos | filterByDescription: filter"></ap-photos>  <!-- [photos] é de photos.component e "photos" é o array q vem de photo.list.component.ts
+/ Esse '|' é chamado de 'pipe'. Ele serve pra aplicar uma transformação, como ocorre ali na expression language com o uppercase, q já 
+fornecido pelo Angula. No entanto, aqui aplicaremos a nossa próprio transformação, o filterBydescription 
+que vai usar o filter, por isso o ': filter'. Então filterByDescription vai receber 2 parâmetros
+q são a lista de photos e o critério filter-->

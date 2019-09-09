@@ -1,5 +1,11 @@
 <!-- o que vem pra cá vai ser definido em photos.component.html quando ele chamar 
-    esse template pelo seletor 'ap-photo'-->
+    esse template pelo seletor 'ap-photo'
+
+/Pelo seletor ap-photo, é passado os dados 'url' e 'description' do componente de photo-list.component.ts para 
+para photo.component.ts, por isso lá tem o @Input() e aqui tem os colchetes nos nomes dos atributos,
+só q agora quem chama o ap-photo é photos.component.html, mas o 
+binding feito em photo-list.component.html mantém a lógica.
+-->
 
 <img class="img-thumbnail" [src]="url" [alt]="description"> 
 

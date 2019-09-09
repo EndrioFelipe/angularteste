@@ -7,6 +7,10 @@ agora essa mesma ligação é feita através do binding <ap-photos [photos]="pho
 
 -->
 
+<p class="text-center text-muted" *ngIf="photos.length==0">
+  Sorry, no photos
+</p>
+
 
 <ol class="list-unstyled">
   <li *ngFor="let cols of rows" class="row"><!-- esse rows é o array q vem de photos.component.ts / cada lista será uma row com cada uma 3 fotos, por isso vamos iterar de rows, cada row com 3 colunas / lembrando q rows é um array que contém conjuntos de arrays com cada um deles com 3 photos-->
@@ -15,7 +19,7 @@ agora essa mesma ligação é feita através do binding <ap-photos [photos]="pho
       'url' e 'description' com 'photo.url' e 'photo.description' -->
       <ap-photo
           [url]="photo.url"
-          [description]="photo.description">
+          [description]="photo.description">          
       </ap-photo>
     </div> 
   </li>
