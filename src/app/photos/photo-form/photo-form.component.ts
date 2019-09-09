@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './photo-form.component.html',
   styleUrls: ['./photo-form.component.css']
 })
+
+//basicamente esse PhotoFormComponent tá servindo como teste no app.routing.module q está designando o caminho 'p/add' para ele
 export class PhotoFormComponent implements OnInit {
 
   constructor() { }
